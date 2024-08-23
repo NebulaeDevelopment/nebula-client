@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client).
- * Copyright (c) Meteor Development.
+ * This file is part of the Nebula Client distribution (https://github.com/NebulaeDevelopment/nebula-client).
+ * Copyright (c) Nebulae Development & Meteor Development.
  */
 
 package meteordevelopment.meteorclient.gui.screens.accounts;
@@ -28,10 +28,10 @@ public class AccountInfoScreen extends WindowScreen {
     public void initWidgets() {
         TokenAccount e = (TokenAccount) account;
         WHorizontalList l = add(theme.horizontalList()).expandX().widget();
-        
+
         WButton copy = theme.button("Copy");
         copy.action = () -> mc.keyboard.setClipboard(e.getToken());
-        
+
         l.add(theme.label((account.getType() == AccountType.EasyMC ? "EasyMC" : "TheAltening") + " token"));
         l.add(theme.label(e.getToken()).color(Color.GRAY)).pad(5);
         l.add(copy);

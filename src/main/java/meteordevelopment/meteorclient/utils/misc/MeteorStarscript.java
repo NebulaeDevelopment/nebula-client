@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client).
- * Copyright (c) Meteor Development.
+ * This file is part of the Nebula Client distribution (https://github.com/NebulaeDevelopment/nebula-client).
+ * Copyright (c) Nebulae Development & Meteor Development.
  */
 
 package meteordevelopment.meteorclient.utils.misc;
@@ -86,8 +86,9 @@ public class MeteorStarscript {
 
         // Meteor
         ss.set("meteor", new ValueMap()
+        ss.set("nebula", new ValueMap()
             .set("name", MeteorClient.NAME)
-            .set("version", MeteorClient.VERSION != null ? (MeteorClient.DEV_BUILD.isEmpty() ? MeteorClient.VERSION.toString() : MeteorClient.VERSION + " " + MeteorClient.DEV_BUILD) : "")
+            .set("version", MeteorClient.VERSION != null ? MeteorClient.VERSION.toString() : "")
             .set("modules", () -> Value.number(Modules.get().getAll().size()))
             .set("active_modules", () -> Value.number(Modules.get().getActive().size()))
             .set("is_module_active", MeteorStarscript::isModuleActive)

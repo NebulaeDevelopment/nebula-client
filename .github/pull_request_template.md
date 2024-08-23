@@ -11,10 +11,6 @@ A summary of the changes along with the reasoning behind the changes.
 
 Mention any issues that this pr relates to.
 
-# How Has This Been Tested?
-
-Videos or screenshots of the changes if applicable.
-
 # Checklist:
 
 - [ ] My code follows the style guidelines of this project.

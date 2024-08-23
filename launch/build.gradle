@@ -4,5 +4,5 @@ plugins {
 
 sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
 
-group "meteordevelopment"
+group "nebulaedevelopment"
 version "0.1.0"

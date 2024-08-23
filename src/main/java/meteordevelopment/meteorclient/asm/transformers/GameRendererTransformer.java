@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client).
- * Copyright (c) Meteor Development.
+ * This file is part of the Nebula Client distribution (https://github.com/NebulaeDevelopment/nebula-client).
+ * Copyright (c) Nebulae Development & Meteor Development.
  */
 
 package meteordevelopment.meteorclient.asm.transformers;
@@ -24,7 +24,7 @@ public class GameRendererTransformer extends AsmTransformer {
     public void transform(ClassNode klass) {
         // Modify GameRenderer.getFov()
         MethodNode method = getMethod(klass, getFovMethod);
-        if (method == null) error("[Meteor Client] Could not find method GameRenderer.getFov()");
+        if (method == null) error("[Nebula Client] Could not find method GameRenderer.getFov()");
 
         int injectionCount = 0;
 
@@ -53,7 +53,7 @@ public class GameRendererTransformer extends AsmTransformer {
             }
         }
 
-        if (injectionCount < 2) error("[Meteor Client] Failed to modify GameRenderer.getFov()");
+        if (injectionCount < 2) error("[Nebula Client] Failed to modify GameRenderer.getFov()");
     }
 
     private void generateEventCall(InsnList insns, AbstractInsnNode loadPreviousFov) {

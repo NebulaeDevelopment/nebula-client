@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client).
- * Copyright (c) Meteor Development.
+ * This file is part of the Nebula Client distribution (https://github.com/NebulaeDevelopment/nebula-client).
+ * Copyright (c) Nebulae Development & Meteor Development.
  */
 
 package meteordevelopment.meteorclient.gui;
@@ -46,7 +46,7 @@ public class GuiThemes {
             }
         }
 
-        if (theme == null) select("Meteor");
+        if (theme == null) select("Nebula");
     }
 
     public static void add(GuiTheme theme) {

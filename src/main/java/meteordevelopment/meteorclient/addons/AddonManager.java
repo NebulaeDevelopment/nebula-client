@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client).
- * Copyright (c) Meteor Development.
+ * This file is part of the Nebula Client distribution (https://github.com/NebulaeDevelopment/nebula-client).
+ * Copyright (c) Nebulae Development & Meteor Development.
  */
 
 package meteordevelopment.meteorclient.addons;
@@ -41,7 +41,7 @@ public class AddonManager {
 
                 @Override
                 public String getCommit() {
-                    String commit = MeteorClient.MOD_META.getCustomValue(MeteorClient.MOD_ID + ":commit").getAsString();
+                    String commit = MeteorClient.MOD_META.getCustomValue(MeteorClient.PARENT_MOD_ID + ":commit").getAsString();
                     return commit.isEmpty() ? null : commit;
                 }
             };
@@ -50,8 +50,8 @@ public class AddonManager {
 
             MeteorClient.ADDON.name = metadata.getName();
             MeteorClient.ADDON.authors = new String[metadata.getAuthors().size()];
-            if (metadata.containsCustomValue(MeteorClient.MOD_ID + ":color")) {
-                MeteorClient.ADDON.color.parse(metadata.getCustomValue(MeteorClient.MOD_ID + ":color").getAsString());
+            if (metadata.containsCustomValue(MeteorClient.PARENT_MOD_ID + ":color")) {
+                MeteorClient.ADDON.color.parse(metadata.getCustomValue(MeteorClient.PARENT_MOD_ID + ":color").getAsString());
             }
 
             int i = 0;
@@ -75,8 +75,8 @@ public class AddonManager {
             if (metadata.getAuthors().isEmpty()) throw new RuntimeException("Addon \"%s\" requires at least 1 author to be defined in it's fabric.mod.json. See https://fabricmc.net/wiki/documentation:fabric_mod_json_spec".formatted(addon.name));
             addon.authors = new String[metadata.getAuthors().size()];
 
-            if (metadata.containsCustomValue(MeteorClient.MOD_ID + ":color")) {
-                addon.color.parse(metadata.getCustomValue(MeteorClient.MOD_ID + ":color").getAsString());
+            if (metadata.containsCustomValue(MeteorClient.PARENT_MOD_ID + ":color")) {
+                addon.color.parse(metadata.getCustomValue(MeteorClient.PARENT_MOD_ID + ":color").getAsString());
             }
 
             int i = 0;

@@ -1,6 +1,6 @@
 /*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client).
- * Copyright (c) Meteor Development.
+ * This file is part of the Nebula Client distribution (https://github.com/NebulaeDevelopment/nebula-client).
+ * Copyright (c) Nebulae Development & Meteor Development.
  */
 
 package meteordevelopment.meteorclient.asm;
@@ -39,7 +39,7 @@ public class Asm {
     public static void init() {
         if (INSTANCE != null) return;
 
-        INSTANCE = new Asm(System.getProperty("meteor.asm.export") != null);
+        INSTANCE = new Asm(System.getProperty("nebula.asm.export") != null || System.getProperty("meteor.asm.export") != null);
         INSTANCE.add(new GameRendererTransformer());
         INSTANCE.add(new CanvasWorldRendererTransformer());
         INSTANCE.add(new PacketInflaterTransformer());
@@ -72,7 +72,7 @@ public class Asm {
     private void export(String name, byte[] bytes) {
         if (export) {
             try {
-                Path path = Path.of(FabricLoader.getInstance().getGameDir().toString(), ".meteor.asm.out", name.replace('.', '/') + ".class");
+                Path path = Path.of(FabricLoader.getInstance().getGameDir().toString(), ".nebula.asm.out", name.replace('.', '/') + ".class");
                 new File(path.toUri()).getParentFile().mkdirs();
                 Files.write(path, bytes);
             } catch (IOException e) {

@@ -1,5 +1,5 @@
 name: Crash
-description: Report a crash to help us improve Meteor.
+description: Report a crash to help us improve Nebula.
 labels: [ crash ]
 body:
   - type: textarea
@@ -20,10 +20,10 @@ body:
     validations:
         required: true
   - type: input
-    id: meteor-version
+    id: nebula-version
     attributes:
-      label: Meteor Version
-      placeholder: Meteor X.Y.Z (or X.Y.Z-build_number)
+      label: Nebula Version
+      placeholder: Nebula X.Y.Z (or X.Y.Z-build_number)
     validations:
       required: true
   - type: input

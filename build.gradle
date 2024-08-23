@@ -1,12 +1,11 @@
 plugins {
     id "fabric-loom" version "1.7-SNAPSHOT"
-    id "maven-publish"
     id "com.github.johnrengelman.shadow" version "8.1.1"
 }
 
 base {
-    archivesBaseName = project.archives_base_name
-    version = project.mod_version + (project.hasProperty("devbuild") ? ("-" + project.findProperty("devbuild")) : "")
+    archivesName = project.archives_base_name
+    version = project.mod_version
     group = project.maven_group
 }
 
@@ -81,7 +80,7 @@ dependencies {
 }
 
 loom {
-    accessWidenerPath = file("src/main/resources/meteor-client.accesswidener")
+    accessWidenerPath = file("src/main/resources/nebula-client.accesswidener")
 }
 
 afterEvaluate {
@@ -94,7 +93,6 @@ tasks {
     processResources {
         def propertyMap = [
             "version"          : project.version,
-            "devbuild"         : project.findProperty("devbuild") ?: "",
             "commit"           : project.findProperty("commit") ?: "",
             "minecraft_version": project.minecraft_version,
             "loader_version"   : project.loader_version
@@ -150,32 +148,5 @@ tasks {
 
     build {
         dependsOn javadocJar
-    }
-}
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            artifactId = "meteor-client"
-            version = project.hasProperty("devbuild") ? (project.mod_version + "-SNAPSHOT") : project.mod_version
-
-            from components.java
-        }
-    }
-
-    repositories {
-        maven {
-            name = "meteor-maven"
-            url = project.hasProperty("devbuild") ? "https://maven.meteordev.org/snapshots" : "https://maven.meteordev.org/releases"
-
-            credentials {
-                username = System.getenv("MAVEN_METEOR_ALIAS")
-                password = System.getenv("MAVEN_METEOR_TOKEN")
-            }
-
-            authentication {
-                basic(BasicAuthentication)
-            }
-        }
     }
 }
