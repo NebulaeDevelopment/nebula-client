@@ -68,6 +68,8 @@ public abstract class System<T> implements ISerializable<T> {
 
         try {
             if (folder != null) file = new File(folder, file.getName());
+            // Nebula - If no folder specified and no Nebula save file exists, try loading from the upstream Meteor Client directory
+            else if (!file.exists()) file = new File(MeteorClient.UPSTREAM_FOLDER, file.getName());
 
             if (file.exists()) {
                 try {

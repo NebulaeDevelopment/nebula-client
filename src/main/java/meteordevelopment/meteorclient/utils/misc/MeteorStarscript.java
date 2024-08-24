@@ -85,8 +85,7 @@ public class MeteorStarscript {
         ss.set("cps", () -> Value.number(CPSUtils.getCpsAverage()));
 
         // Meteor
-        ss.set("meteor", new ValueMap()
-        ss.set("nebula", new ValueMap()
+        ss.set("meteor", new ValueMap() // Nebula - It's not feasible to modify this while still keeping compatibility with Meteor Client saved configs
             .set("name", MeteorClient.NAME)
             .set("version", MeteorClient.VERSION != null ? MeteorClient.VERSION.toString() : "")
             .set("modules", () -> Value.number(Modules.get().getAll().size()))

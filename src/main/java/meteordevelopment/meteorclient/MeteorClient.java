@@ -46,7 +46,7 @@ import java.lang.invoke.MethodHandles;
 public class MeteorClient implements ClientModInitializer {
     public static final String MOD_ID = "nebula-client";
     // Nebula - In order to keep addon compat, we need to borrow upstream's mod id in a few locations
-    public static final String PARENT_MOD_ID = "meteor-client";
+    public static final String UPSTREAM_MOD_ID = "meteor-client";
     public static final ModMetadata MOD_META;
     public static final String NAME;
     public static final Version VERSION;
@@ -58,6 +58,7 @@ public class MeteorClient implements ClientModInitializer {
     public static MinecraftClient mc;
     public static final IEventBus EVENT_BUS = new EventBus();
     public static final File FOLDER = FabricLoader.getInstance().getGameDir().resolve(MOD_ID).toFile();
+    public static final File UPSTREAM_FOLDER = FabricLoader.getInstance().getGameDir().resolve(UPSTREAM_MOD_ID).toFile();
     public static final Logger LOG;
 
     static {

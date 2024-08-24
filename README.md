@@ -22,7 +22,7 @@
 Although pull requests are welcome, unless your changes affect Nebula Client specifically you are encouraged to [contribute upstream](https://github.com/MeteorDevelopment/meteor-client/pulls) instead.
 
 ## Bugs and Suggestions
-Bug reports and suggestions should be made in this repo's [issue tracker](https://github.com/MeteorDevelopment/meteor-client/issues) using the templates provided.  
+Bug reports and suggestions should be made in this repo's [issue tracker](https://github.com/NebulaeDevelopment/nebula-client/issues) using the templates provided.  
 Please provide as much information as you can to best help us understand your issue and give a better chance of it being resolved.  
 You should **never create an issue on the Meteor Client issue tracker** when using this distribution. If applicable, we will create an issue on their tracker ourselves.
 
